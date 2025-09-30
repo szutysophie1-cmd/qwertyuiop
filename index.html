@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Look Closely...</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 20vh;
+    }
+    #scare {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: black;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #scare img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Can you see the hidden detail in this image?</h1>
+  <p>Stare closely for a few seconds...</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Normal_map_example.png" alt="fake test image" width="500" />
+
+  <div id="scare">
+    <img src="https://i.imgur.com/oZ7Rz7T.png" alt="screamer image" />
+    <audio id="scream" src="https://www.myinstants.com/media/sounds/movie_1.mp3" autoplay></audio>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      const scare = document.getElementById('scare');
+      const scream = document.getElementById('scream');
+      scare.style.display = 'flex';
+      scream.play();
+    }, 7000); // Delay in milliseconds (7000ms = 7 seconds)
+  </script>
+</body>
+</html>
